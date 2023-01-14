@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+// Colors 
+
+$clr-primary-violet: hsl(263, 55%, 52%);
+$clr-primary-blue-400: hsl(217, 19%, 35%);
+$clr-primary-blue-700: hsl(219, 29%, 14%);
+
+$clr-neutral-100: hsl(0, 0%, 81%);
+$clr-neutral-400: hsl(210, 46%, 95%);
+
+//Fonts
+
+$fs-primary: 13px;
+
+$ff-primary: 'Barlow Semi Condensed', sans-serif;
+
+$fw-normal: 500;
+$fw-bold: 600;
+
+@mixin desktop {
+    @media (min-width: 768px) {
+        @content
+    }
+}

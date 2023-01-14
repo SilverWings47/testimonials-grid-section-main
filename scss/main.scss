@@ -1,0 +1,138 @@
+@import 'reset';
+@import 'config';
+
+body {
+    background-color: $clr-neutral-400;
+    font-family: $ff-primary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cards {
+    display: grid;
+    gap: 1.5rem;
+    padding: 5rem 1.5rem;
+
+    @include desktop {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 71rem;
+        margin-inline: auto;
+        gap: 1.875rem;
+    }
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 1.5rem 1.9rem 2rem 1.9rem;
+
+    .card-header {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: $fs-primary;
+        margin-bottom: 1rem;
+
+        .card-header__img.left {
+            border-radius: 50%;
+            width: 32px;
+        }
+
+            .card-header__name {
+                color: $clr-neutral-100;
+            }
+
+            .card-header__status {
+                color: hsla(0, 0%, 81%, 0.5);
+                font-size: .7rem;
+            }
+    }
+
+    .card-review__title {
+        color: white;
+        font-size: 1.27rem;
+        line-height: 1.275;
+        margin-bottom: 1rem;
+    }
+
+    .card-review__text {
+        color: hsla(0, 0%, 81%, 0.7);
+        font-size: $fs-primary;
+        line-height: 1.375;
+
+    }
+
+    &:nth-child(1) {
+        background-color: $clr-primary-violet;
+        background-image: url('../images/bg-pattern-quotation.svg');
+        background-repeat: no-repeat;
+        background-position: 90% 0%;
+
+        @include desktop {
+            grid-column: 1 / 3;
+            background-position: 75% 0%;
+        }
+
+        .card-review__text {
+            margin-right: 1rem;
+        }
+    }
+
+    &:nth-child(2){
+        background-color: $clr-primary-blue-400;
+        @include desktop {
+            grid-column: 3 / 4;
+        }
+    }
+
+    &:nth-child(3),
+    &:nth-child(5){
+
+        .card-header__name {
+            color: $clr-primary-blue-400;
+            font-weight: $fw-bold;
+        }
+
+        .card-header__status {
+            color: hsla(217, 19%, 35%, 0.5);
+        }
+
+        .card-review__title {
+            color: $clr-primary-blue-400;
+            font-weight: $fw-bold;
+        }
+
+        .card-review__text {
+            color: hsla(217, 19%, 35%, 0.7);
+        }
+    }
+
+    &:nth-child(4){
+        background-color: $clr-primary-blue-700;
+
+        @include desktop {
+            grid-column: 2 / 4;
+            grid-row: 2 / 3;
+        }
+    }
+
+    &:nth-child(3){
+        @include desktop {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+        }
+    }
+
+    &:nth-child(5){
+        @include desktop {
+            grid-column: 4 / 5;
+            grid-row: 1 / 3;
+        }
+    }
+ }
+
+.violet-border {
+    border: 2px solid lighten($clr-primary-violet, 15%);
+}
